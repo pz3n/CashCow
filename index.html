@@ -19,9 +19,9 @@
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
         <header class="inner">
-            <h2 id="project_title">Cashcow
+            <h1 id="project_title">Cashcow
               <button class="btn btn-warning" style="float:right">Compare</button>
-            </h2>
+            </h1>
         </header>
     </div>
 
@@ -43,12 +43,18 @@
   
           <h3>Merchant</h3>
           <select class="form-control" id="currency">
-            <option>SGD</option>
+            <option>NTUC FairPrice</option>
             <option>USD</option>
             <option>TWD</option>
           </select>
           
           <h3>Mode</h3>
+          <div class="radio">
+	    <label><input type="radio" id="mode" value="POS" checked>POS</label>
+	    <label><input type="radio" id="mode" value="Online" >Online</label>
+	    <label><input type="radio" id="mode" value="Paywave" >Paywave</label>
+	  </div>
+          
           
           <h3>Date</h3>
           <div class="input-append date" id="dp3" data-date="26-07-2014" data-date-format="dd-mm-yyyy">
