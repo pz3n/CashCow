@@ -1,3 +1,3 @@
 $( document ).ready(function() {
-    windows.alear("sas");
+    windows.alert("sas");
 });
