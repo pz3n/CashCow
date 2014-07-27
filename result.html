@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Cashcow : " />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <link href="/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="/bootstrap/assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/bootstrap/assets/css/docs.css" rel="stylesheet">
+    <link href="./css/datepicker.css" rel="stylesheet">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <script src="./js/bootstrap-datepicker.js"></script>
+    <script src="./js/index.js"></script>
+    
+    <title>Cashcow</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+            <h1 id="project_title" style="line-height:10px;">Card Cow
+              <button class="btn btn-warning" id="back">Back</button>
+            </h1>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+         <h3 style="line-height:10px;">Amount</h3>
+          <div class="col-sm-10">
+            <input type="number" class="form-control" id="amount">
+          </div>
+          <div class="col-sm-10">
+            <select class="form-control" id="currency">
+              <option>SGD</option>
+              <option>USD</option>
+              <option>TWD</option>
+            </select>
+          </div>
+  
+          <h3 style="line-height:10px;">Merchant</h3>
+          <select class="form-control" id="currency">
+            <option>NTUC FairPrice</option>
+            <option>USD</option>
+            <option>TWD</option>
+          </select>
+          
+          <h3 style="line-height:10px;">Mode</h3>
+          <div class="radio">
+	    <label><input type="radio" id="mode" name= "mode" value="POS" checked>POS</label>
+	    <label><input type="radio" id="mode" name= "mode" value="Online" >Online</label>
+	    <label><input type="radio" id="mode" name= "mode" value="Paywave" >Paywave</label>
+	  </div>
+          
+          
+          <h3 style="line-height:10px;">Date</h3>
+          <div class="input-append date" id="dp3" data-date="26-07-2014" data-date-format="dd-mm-yyyy">
+	    <input class="span2" size="16" type="text" value="26-07-2014" readonly="">
+	    <span class="add-on"><i class="icon-calendar"></i></span>
+	  </div>
+	  
+	 
+     </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+      
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
