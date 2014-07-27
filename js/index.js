@@ -6,8 +6,10 @@ $( document ).ready(function() {
       $(".js-result").show();
       
       var amount = $("#amount").val() +" "+$("#currency").val();
-      window.alert(amount);
-      $("#amountResult").val(amount) ;
+      $("#amountResult").text(amount);
+      $("#merchantResult").text($("#merchant").val());
+      $("#modeResult").text($("#mode").val());
+      
    });
    
    $("#back").click(function(){
