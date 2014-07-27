@@ -5,10 +5,12 @@ $( document ).ready(function() {
       $(".js-index").hide();
       $(".js-result").show();
       
-      var amount = $("#amount").val() +" "+$("#currency").val();
+      var amount = "Amount: "+ $("#amount").val() +" "+$("#currency").val();
+      var merchant = "Merchant: "+$("#merchant").val()
+      var mode = "Mode: "+$("input[name=mode]:checked").val()
       $("#amountResult").text(amount);
-      $("#merchantResult").text($("#merchant").val());
-      $("#modeResult").text($("input[name=mode]:checked").val());
+      $("#merchantResult").text(merchant);
+      $("#modeResult").text(mode);
       
    });
    
