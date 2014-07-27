@@ -6,7 +6,7 @@ $( document ).ready(function() {
       $(".js-result").show();
    });
    
-   $("#compare").click(function(){
+   $("#back").click(function(){
       $(".js-index").show();
       $(".js-result").hide();
    });
