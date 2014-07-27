@@ -5,8 +5,8 @@ $( document ).ready(function() {
       $(".js-index").hide();
       $(".js-result").show();
       
-      var amount = $("#amount").value() +" "+$("#currency").value();
-      $("#amountResult").value() = amount;
+      var amount = $("#amount").val() +" "+$("#currency").val();
+      $("#amountResult").val() = amount;
    });
    
    $("#back").click(function(){
