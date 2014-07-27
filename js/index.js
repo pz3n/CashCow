@@ -8,7 +8,7 @@ $( document ).ready(function() {
       var amount = $("#amount").val() +" "+$("#currency").val();
       $("#amountResult").text(amount);
       $("#merchantResult").text($("#merchant").val());
-      $("#modeResult").text($("#mode").val());
+      $("#modeResult").text($("input[name=radioName]:checked").val());
       
    });
    
