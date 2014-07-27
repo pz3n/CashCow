@@ -4,6 +4,9 @@ $( document ).ready(function() {
    $("#compare").click(function(){
       $(".js-index").hide();
       $(".js-result").show();
+      
+      var amount = $("#amount").value() +" "+$("#currency").value();
+      $("#amountResult").value() = amount;
    });
    
    $("#back").click(function(){
