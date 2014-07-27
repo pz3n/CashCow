@@ -4,7 +4,7 @@ $( document ).ready(function() {
    $("#compare").click(function(){
       $(".js-index").hide();
       $(".js-result").show();
-      
+      alert($("#amount").val());
       var amount = $("#amount").val() +" "+$("#currency").val();
       $("#amountResult").val() = amount;
    });
