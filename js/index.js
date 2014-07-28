@@ -21,6 +21,8 @@ $( document ).ready(function() {
       var card2Result =  Math.floor(Math.random()*card1Result);
       var card3Result =  Math.floor(Math.random()*card2Result);
       $("#card1").text(card1Result+" miles*");
+      $("#card2").text(card2Result+" miles*");
+      $("#card3").text(card3Result+" miles*");
       
    });
    
