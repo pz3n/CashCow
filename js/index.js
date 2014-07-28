@@ -6,7 +6,7 @@ $( document ).ready(function() {
       $(".js-result").show();
       
       var amount;
-      if($("#amount").val().empty()){
+      if($("#amount").val()){
          amount = "Amount: 0" +" "+$("#currency").val();
       }else{
          amount = "Amount: "+ $("#amount").val() +" "+$("#currency").val();
@@ -17,6 +17,8 @@ $( document ).ready(function() {
       $("#merchantResult").text(merchant);
       $("#modeResult").text(mode);
       
+      var card1Result =  Math.random();
+      $("#card1").text(card1Result+" miles*");
       
    });
    
