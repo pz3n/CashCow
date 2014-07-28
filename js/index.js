@@ -17,8 +17,6 @@ $( document ).ready(function() {
       $("#merchantResult").text(merchant);
       $("#modeResult").text(mode);
       
-      var card1Result =  Math.random();
-      $("#card1").text(card1Result+" miles*");
       
    });
    
