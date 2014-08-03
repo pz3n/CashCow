@@ -79,10 +79,13 @@ $( document ).ready(function() {
       
       for(var cardResult in cardResults){
          $("#js-card-result").append(
-            '<div class="highlight"><img src="http://www.airfares.com.sg/promotions/credit-card-deals/anz/img/r-travelcard.jpg" width="125" height="45"><span class="col-xs-6" id="card1" style="width:100px"></span><button class="btn btn-warning">Use It!</button></div>'
+            '<div class="highlight"><img src='
          );
+         $("#js-card-result").append(cardResult.link);
+         $("#js-card-result").append('width="125" height="45"><span class="col-xs-6" id="card1" style="width:100px"></span><button class="btn btn-warning">Use It!</button></div>');
       }
       
+       
    });
 
    
