@@ -1,11 +1,7 @@
 $( document ).ready(function() {
    $(".js-result").hide();
   
-   $( "#dateInput" ).datepicker();
-   var today = new Date();
-   $('#dateInput').data({date: today});
-   $('#dateInput').datepicker('update');
-   $('#dateInput').datepicker().children('input').val(today);
+   $("#dateInput").datepicker();
    
    $("#compare").click(function(){
       $(".js-index").hide();
