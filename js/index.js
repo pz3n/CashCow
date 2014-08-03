@@ -65,9 +65,9 @@ $( document ).ready(function() {
       $("#card2").text(card2Result+" miles*");
       $("#card3").text(card3Result+" miles*");
       
-      var cardResult = [];
+      var cardResults = [];
       for(var card in cards){
-         cardResult.push({
+         cardResults.push({
             name: card.name,
             link: card.link,
             points: Math.floor(amount/card.block)*card.rate
@@ -77,10 +77,12 @@ $( document ).ready(function() {
       cardResult.sort(function(a, b) { 
           return a.points - b.points;
       })
-      
-      $("#js-card-result").append(
-         '<div class="highlight"><img src="https://ringgitplus.com/img/card-230/uob-preferred-platinum-visa.png" width="125" height="45"><span class="col-xs-6" id="card1" style="width:100px"></span><button class="btn btn-warning">Use It!</button></div>'
+      alert(cardResults.length);
+      for(var cardResult in cardResults){
+         $("#js-card-result").append(
+            '<div class="highlight"><img src="https://ringgitplus.com/img/card-230/uob-preferred-platinum-visa.png" width="125" height="45"><span class="col-xs-6" id="card1" style="width:100px"></span><button class="btn btn-warning">Use It!</button></div>'
          );
+      }
       
    });
    
