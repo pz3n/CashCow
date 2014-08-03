@@ -42,7 +42,15 @@ $( document ).ready(function() {
    ]
    
    
-   $("#compare").click(function(){
+   
+   
+   $("#back").click(function(){
+      $(".js-index").show();
+      $(".js-result").hide();
+   });
+});
+
+$("#compare").click(function(){
       $(".js-index").hide();
       $(".js-result").show();
       
@@ -85,9 +93,3 @@ $( document ).ready(function() {
       }
       
    });
-   
-   $("#back").click(function(){
-      $(".js-index").show();
-      $(".js-result").hide();
-   });
-});
