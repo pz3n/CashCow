@@ -15,7 +15,7 @@ $( document ).ready(function() {
       }
       var merchant = "Merchant: "+$("#merchant").val()
       var mode = "Mode: "+$("input[name=mode]:checked").val()
-      $("#amountResult").text("Amount: 0" +" "+$("#currency").val());
+      $("#amountResult").text("Amount: "+amount +" "+$("#currency").val());
       $("#merchantResult").text(merchant);
       $("#modeResult").text(mode);
       
