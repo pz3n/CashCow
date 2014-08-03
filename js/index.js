@@ -3,9 +3,9 @@ $( document ).ready(function() {
   
   
    var today = new Date();
-   alert(today);
-   $('#dateInput').data({date: today}).datepicker('update').children("input").val(today);
-   $('#dateDisplay').val(today);
+   $('#dateInput').data({date: today});
+   $('#dateInput').datepicker('update');
+   $('#dateInput').datepicker().children('input').val(today);
    
    $("#compare").click(function(){
       $(".js-index").hide();
