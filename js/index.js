@@ -74,7 +74,7 @@ $( document ).ready(function() {
          });
       }
       
-      cardResult.sort(function(a, b) { 
+      cardResults.sort(function(a, b) { 
           return a.points - b.points;
       })
       alert(cardResults.length);
