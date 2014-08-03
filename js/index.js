@@ -79,7 +79,7 @@ $( document ).ready(function() {
       
       for(var cardResult in cardResults){
          $("#js-card-result").append(
-            '<div class="highlight"><img src='"
+            '<div class="highlight"><img src="'
          );
          $("#js-card-result").append((cardResult.link).toString());
          $("#js-card-result").append('" width="125" height="45"><span class="col-xs-6" id="card1" style="width:100px"></span><button class="btn btn-warning">Use It!</button></div>');
