@@ -7,25 +7,25 @@ $( document ).ready(function() {
    
        {
            name: "World MasterCard",
-           coy: "Maybank";
+           coy: "Maybank",
            rate: 0.4
        },
    
        {
            name: "PRVI Miles",
-           coy: "UOB";
+           coy: "UOB",
            rate: 2
        },
    
        {
            name: "Prestige MasterCard",
-           coy: "Citibank";
+           coy: "Citibank",
            rate: 0.4
        },
    
        {
            name: "Travel Visa Signature",
-           coy: "ANZ";
+           coy: "ANZ",
            rate: 1
        }
    ]
