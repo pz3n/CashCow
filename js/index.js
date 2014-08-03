@@ -78,6 +78,10 @@ $( document ).ready(function() {
           return a.points - b.points;
       })
       
+      $("#js-card-result").append(
+         '<div class="highlight"><img src="https://ringgitplus.com/img/card-230/uob-preferred-platinum-visa.png" width="125" height="45"><span class="col-xs-6" id="card1" style="width:100px"></span><button class="btn btn-warning">Use It!</button></div>'
+         );
+      
    });
    
    $("#back").click(function(){
