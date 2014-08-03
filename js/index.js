@@ -1,5 +1,9 @@
 $( document ).ready(function() {
    $(".js-result").hide();
+  
+  
+  var today = new Date();
+$('#dateInput').data({date: today}).datepicker('update').children("input").val(today)
    
    $("#compare").click(function(){
       $(".js-index").hide();
