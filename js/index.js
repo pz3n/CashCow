@@ -3,6 +3,34 @@ $( document ).ready(function() {
   
    $("#dateInput").datepicker();
    
+   var cards = [
+   
+       {
+           name: "World MasterCard",
+           coy: "Maybank";
+           rate: 0.4
+       },
+   
+       {
+           name: "PRVI Miles",
+           coy: "UOB";
+           rate: 2
+       },
+   
+       {
+           name: "Prestige MasterCard",
+           coy: "Citibank";
+           rate: 0.4
+       },
+   
+       {
+           name: "Travel Visa Signature",
+           coy: "ANZ";
+           rate: 1
+       }
+   ]
+   
+   alert(cards[1].rate);
    $("#compare").click(function(){
       $(".js-index").hide();
       $(".js-result").show();
