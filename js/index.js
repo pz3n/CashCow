@@ -67,8 +67,8 @@ $( document ).ready(function() {
       var cardResults = [];
       for(var card in cards){
          cardResults.push({
-            name: card.name,
-            link: card.link,
+            name: card.name.toString(),
+            link: card.link.toString(),
             points: Math.floor(amount/card.block)*card.rate
          });
       }
