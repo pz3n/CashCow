@@ -86,6 +86,7 @@ $( document ).ready(function() {
          append += "<button class='btn btn-warning'>Use It!</button>";
          append += "</div>" ;
          $("#js-card-result").append(append);
+         append="";
       }
       
        
