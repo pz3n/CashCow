@@ -76,17 +76,16 @@ $( document ).ready(function() {
           return a.points - b.points;
       })
       
-      $("#js-card-result").html('');
+      $("#js-card-result").html();
       for(var i = 0; i < cardResults.length ; i++){
-         var append; 
+         var append=""; 
          append += "<div class='highlight'>" ;
-         //append += cardResults[i].name +": " + cardResults[i].points;
-         //append += "</br>" ;
+         append += cardResults[i].name +": " + cardResults[i].points + "miles";
+         append += "</br>" ;
          append += "<img src=" +cardResults[i].link+" width='125' height='45'/><span class='col-xs-6' style='width:100px'></span>";
          append += "<button class='btn btn-warning'>Use It!</button>";
          append += "</div>" ;
          $("#js-card-result").append(append);
-         append="";
       }
       
        
