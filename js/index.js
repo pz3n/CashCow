@@ -110,7 +110,7 @@ $( document ).ready(function() {
       var cardResults = [];
       var cards = [];
       for(var i = 0; i < promos.length ; i++){
-         if(promos[i].category == category && promos[i].start <= date && promos[i].end >= date){
+         if((promos[i].category == category || promos[i].category == "ALL")&& promos[i].start <= date && promos[i].end >= date){
             if($.inArray(promos[i].card, cards) == -1){
                cards.push(promos[i].card); 
                cardResults.push({
@@ -123,7 +123,7 @@ $( document ).ready(function() {
       }
       
       for(var i = 0; i < rates.length ; i++){
-         if(rates[i].category == category){
+         if(rates[i].category == category || rates[i].category == "ALL"){
             if($.inArray(rates[i].card, cards) == -1){
                cards.push(rates[i].card); 
                cardResults.push({
