@@ -65,12 +65,10 @@ $( document ).ready(function() {
       $("#card3").text(card3Result+" miles*");
       
       var cardResults = [];
-      alert(cards[0].name);
-       alert(cards[0].link);
       for(var card in cards){
          cardResults.push({
-            name: card.name(),
-            link: card.link(),
+            name: card.name,
+            link: card.link,
             points: Math.floor(amount/card.block)*card.rate
          });
       }
@@ -78,9 +76,9 @@ $( document ).ready(function() {
       cardResults.sort(function(a, b) { 
           return a.points - b.points;
       })
-      alert(cardResults[0].name());
+      alert(cardResults[0].name);
       
-      alert(cardResults[0].link());
+      alert(cardResults[0].link);
       $("#js-card-result").remove();
       for(var cardResult in cardResults){
          var append= "<div class='highlight'><img src=" +cardResult.link().toString()+" width='125' height='45'/><span class='col-xs-6' style='width:100px'></span><button class='btn btn-warning'>Use It!</button></div>";
