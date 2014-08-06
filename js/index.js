@@ -9,8 +9,7 @@ $( document ).ready(function() {
            coy: "Maybank",
            link:"https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR10QHSEk1HjEQdG1ZhKJNztSrPzz4iCBYqv-93Hxh-HaRd3dWw",
            rate: 0.4,
-           minimum:2500,
-           block: 2500
+           minimum:2500
        },
    
        {
@@ -18,8 +17,7 @@ $( document ).ready(function() {
            coy: "UOB",
            link:"http://t1.gstatic.com/images?q=tbn:ANd9GcTeyZ78NP7AQ2MjBEVAfOWqOsrFYiUNEJsE2m0KMihykjk7covD",
            rate: 2,
-           minimum:5000,
-           block: 5000
+           minimum:5000
        },
    
        {
@@ -27,8 +25,7 @@ $( document ).ready(function() {
            coy: "Citibank",
            link:"http://3.bp.blogspot.com/-WrHgQkOXJKg/Udet6apq_TI/AAAAAAAAEAo/OiRxQpBZbSM/s1600/Citibank+Prestige+World+MasterCard+Elite.jpg",
            rate: 0.4,
-           minimum:1250,
-           block: 1250
+           minimum:1250
        },
    
        {
@@ -36,8 +33,7 @@ $( document ).ready(function() {
            coy: "ANZ",
            link: "http://www.airfares.com.sg/promotions/credit-card-deals/anz/img/r-travelcard.jpg",
            rate: 1,
-           minimum:2000,
-           block: 2000
+           minimum:2000
        }
    ]
    
@@ -57,19 +53,12 @@ $( document ).ready(function() {
       $("#merchantResult").text(merchant);
       $("#modeResult").text(mode);
       
-      var card1Result =  Math.floor(Math.random()*15*amount);
-      var card2Result =  Math.floor(Math.random()*card1Result);
-      var card3Result =  Math.floor(Math.random()*card2Result);
-      $("#card1").text(card1Result+" miles*");
-      $("#card2").text(card2Result+" miles*");
-      $("#card3").text(card3Result+" miles*");
-      
       var cardResults = [];
       for(var i = 0; i < cards.length ; i++){
          cardResults.push({
             name: cards[i].name,
             link: cards[i].link,
-            points: Math.floor(amount/cards[i].block)*cards[i].rate
+            points: amount*cards[i].rate
          });
       }
       cardResults.sort(function(a, b) { 
