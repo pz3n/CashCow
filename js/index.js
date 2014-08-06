@@ -89,13 +89,17 @@ $( document ).ready(function() {
       
       //Populate and sort results array
       var cardResults = [];
+      var cards = [];
       for(var i = 0; i < rates.length ; i++){
          if(rates[i].category == category){
-            cardResults.push({
-               card: rates[i].card,
-               link: rates[i].link,
-               points: amount*rates[i].rate
-            });
+            if($.inArray(rates[i].card, cards) == -1){
+               cards.push(rates[i].card); 
+               cardResults.push({
+                  card: rates[i].card,
+                  link: rates[i].link,
+                  points: amount*rates[i].rate
+               });
+            }
          }
       }
       
