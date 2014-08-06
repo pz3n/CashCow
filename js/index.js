@@ -65,18 +65,15 @@ $( document ).ready(function() {
       $("#card3").text(card3Result+" miles*");
       
       var cardResults = [];
-      alert(cards.length);
       for(var card in cards){
          cardResults.push({
-            name: card.name.toString(),
-            link: card.link.toString(),
+            name: card.name,
+            link: card.link,
             points: Math.floor(amount/card.block)*card.rate
          });
       }
       
-      cardResults.sort(function(a, b) { 
-          return a.points - b.points;
-      })
+      
       alert(cardResults[0].name);
       
       alert(cardResults[0].link);
