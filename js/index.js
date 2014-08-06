@@ -25,6 +25,7 @@ $( document ).ready(function() {
            card: "World MasterCard",
            coy: "Maybank",
            link:"https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR10QHSEk1HjEQdG1ZhKJNztSrPzz4iCBYqv-93Hxh-HaRd3dWw",
+           category: "Groceries",
            rate: 0.4,
            minimum:2500
        },
@@ -33,6 +34,7 @@ $( document ).ready(function() {
            card: "PRVI Miles",
            coy: "UOB",
            link:"http://t1.gstatic.com/images?q=tbn:ANd9GcTeyZ78NP7AQ2MjBEVAfOWqOsrFYiUNEJsE2m0KMihykjk7covD",
+           category: "Groceries",
            rate: 2,
            minimum:5000
        },
@@ -41,6 +43,7 @@ $( document ).ready(function() {
            card: "Prestige MasterCard",
            coy: "Citibank",
            link:"http://3.bp.blogspot.com/-WrHgQkOXJKg/Udet6apq_TI/AAAAAAAAEAo/OiRxQpBZbSM/s1600/Citibank+Prestige+World+MasterCard+Elite.jpg",
+           category: "Groceries",
            rate: 0.4,
            minimum:1250
        },
@@ -49,6 +52,7 @@ $( document ).ready(function() {
            card: "Travel Visa Signature",
            coy: "ANZ",
            link: "http://www.airfares.com.sg/promotions/credit-card-deals/anz/img/r-travelcard.jpg",
+           category: "Dining",
            rate: 1,
            minimum:2000
        }
@@ -86,11 +90,13 @@ $( document ).ready(function() {
       //Populate and sort results array
       var cardResults = [];
       for(var i = 0; i < rates.length ; i++){
-         cardResults.push({
-            card: rates[i].card,
-            link: rates[i].link,
-            points: amount*rates[i].rate
-         });
+         if(rates[i].category == category){
+            cardResults.push({
+               card: rates[i].card,
+               link: rates[i].link,
+               points: amount*rates[i].rate
+            });
+         }
       }
       
       cardResults.sort(function(a, b) { 
