@@ -20,6 +20,17 @@ $( document ).ready(function() {
        }
    ]
    
+   var promos = [
+      {
+           card: "World MasterCard",
+           coy: "Maybank",
+           link:"https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR10QHSEk1HjEQdG1ZhKJNztSrPzz4iCBYqv-93Hxh-HaRd3dWw",
+           category: "Groceries",
+           rate: 40,
+           minimum:2500
+       }
+   ]
+   
    var rates = [
       {
            card: "World MasterCard",
@@ -90,6 +101,19 @@ $( document ).ready(function() {
       //Populate and sort results array
       var cardResults = [];
       var cards = [];
+      for(var i = 0; i < promos.length ; i++){
+         if(promos[i].category == category){
+            if($.inArray(promos[i].card, cards) == -1){
+               cards.push(promos[i].card); 
+               cardResults.push({
+                  card: promos[i].card,
+                  link: promos[i].link,
+                  points: Math.floor(amount*promos[i].rate)
+               });
+            }
+         }
+      }
+      
       for(var i = 0; i < rates.length ; i++){
          if(rates[i].category == category){
             if($.inArray(rates[i].card, cards) == -1){
