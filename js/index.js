@@ -76,12 +76,9 @@ $( document ).ready(function() {
           return a.points - b.points;
       })
       
-      alert(cardResults[0].name);
-      
-      alert(cardResults[0].link);
       $("#js-card-result").remove();
-      for(var cardResult in cardResults){
-         var append= "<div class='highlight'><img src=" +cardResult.link().toString()+" width='125' height='45'/><span class='col-xs-6' style='width:100px'></span><button class='btn btn-warning'>Use It!</button></div>";
+      for(var i = 0; i < cardResults.length ; i++){
+         var append= "<div class='highlight'><img src=" +cardResults[i].link+" width='125' height='45'/><span class='col-xs-6' style='width:100px'></span><button class='btn btn-warning'>Use It!</button></div>";
          $("#js-card-result").append(append);
       }
       
