@@ -76,8 +76,9 @@ $( document ).ready(function() {
       cardResults.sort(function(a, b) { 
           return a.points - b.points;
       })
+      $("#js-card-result").empty();
       for(var cardResult in cardResults){
-         var append= "<div class='highlight'><img src=" +cardResult.link()+" width='125' height='45'><span class='col-xs-6' style='width:100px'></span><button class='btn btn-warning'>Use It!</button></div>";
+         var append= "<div class='highlight'><img src=" +cardResult.link().toString()+" width='125' height='45'><span class='col-xs-6' style='width:100px'></span><button class='btn btn-warning'>Use It!</button></div>";
          $("#js-card-result").append(append);
       }
       
