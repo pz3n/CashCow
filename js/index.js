@@ -20,9 +20,9 @@ $( document ).ready(function() {
        }
    ]
    
-   var cards = [
+   var rates = [
       {
-           name: "World MasterCard",
+           card: "World MasterCard",
            coy: "Maybank",
            link:"https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR10QHSEk1HjEQdG1ZhKJNztSrPzz4iCBYqv-93Hxh-HaRd3dWw",
            rate: 0.4,
@@ -30,7 +30,7 @@ $( document ).ready(function() {
        },
    
        {
-           name: "PRVI Miles",
+           card: "PRVI Miles",
            coy: "UOB",
            link:"http://t1.gstatic.com/images?q=tbn:ANd9GcTeyZ78NP7AQ2MjBEVAfOWqOsrFYiUNEJsE2m0KMihykjk7covD",
            rate: 2,
@@ -38,7 +38,7 @@ $( document ).ready(function() {
        },
    
        {
-           name: "Prestige MasterCard",
+           card: "Prestige MasterCard",
            coy: "Citibank",
            link:"http://3.bp.blogspot.com/-WrHgQkOXJKg/Udet6apq_TI/AAAAAAAAEAo/OiRxQpBZbSM/s1600/Citibank+Prestige+World+MasterCard+Elite.jpg",
            rate: 0.4,
@@ -46,7 +46,7 @@ $( document ).ready(function() {
        },
    
        {
-           name: "Travel Visa Signature",
+           card: "Travel Visa Signature",
            coy: "ANZ",
            link: "http://www.airfares.com.sg/promotions/credit-card-deals/anz/img/r-travelcard.jpg",
            rate: 1,
@@ -70,7 +70,8 @@ $( document ).ready(function() {
       //Set category
       for(var i = 0; i < merchants.length ; i++){
          if(merchants[i].name == $("#merchant").val()){
-            alert(merchants[i].category);
+            category = merchants[i].category;
+            break;
          }
       }
       
@@ -84,11 +85,11 @@ $( document ).ready(function() {
       
       //Populate and sort results array
       var cardResults = [];
-      for(var i = 0; i < cards.length ; i++){
+      for(var i = 0; i < rates.length ; i++){
          cardResults.push({
-            name: cards[i].name,
-            link: cards[i].link,
-            points: amount*cards[i].rate
+            card: rates[i].card,
+            link: rates[i].link,
+            points: amount*rates[i].rate
          });
       }
       
@@ -102,7 +103,7 @@ $( document ).ready(function() {
       for(var i = 0; i < cardResults.length ; i++){
          var append=""; 
          append += "<div class='highlight'>" ;
-         append += cardResults[i].name +": " + cardResults[i].points + " miles";
+         append += cardResults[i].card +": " + cardResults[i].points + " miles";
          append += "<br style='clear:both' />" ;
          append += "<img src=" +cardResults[i].link+" width='125' height='45' style='margin:0;border:0;padding:0;'/>"
          append += "<span class='col-xs-6' style='width:100px'></span>";
