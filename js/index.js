@@ -27,6 +27,8 @@ $( document ).ready(function() {
            link:"https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR10QHSEk1HjEQdG1ZhKJNztSrPzz4iCBYqv-93Hxh-HaRd3dWw",
            category: "Groceries",
            rate: 40,
+           start: 20140806,
+           end: 20140825,
            minimum:2500
        }
    ]
@@ -75,14 +77,15 @@ $( document ).ready(function() {
       
       var amount;
       var category;
-      //Set amount
+      var date;
+      //Get amount
       if($("#amount").val()){
          amount = $("#amount").val();
       }else{
          amount = 0;
       }
       
-      //Set category
+      //Get category
       for(var i = 0; i < merchants.length ; i++){
          if(merchants[i].name == $("#merchant").val()){
             category = merchants[i].category;
@@ -90,6 +93,10 @@ $( document ).ready(function() {
          }
       }
       
+      //Get date in number chain yyyymmdd
+      var d = new Date();
+      date= d.getFullYear()*10000 + d.getMonth()*100 + d.getDate();
+      alert(date);
       //Set selection info
       var merchant = "Merchant: "+$("#merchant").val()
       var mode = "Mode: "+$("input[name=mode]:checked").val()
