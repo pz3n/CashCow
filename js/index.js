@@ -29,7 +29,8 @@ $( document ).ready(function() {
            rate: 40,
            start: 20140806,
            end: 20140825,
-           minimum:2500
+           minimum:2500,
+           online: true
        }
    ]
    
@@ -40,7 +41,28 @@ $( document ).ready(function() {
            link:"https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR10QHSEk1HjEQdG1ZhKJNztSrPzz4iCBYqv-93Hxh-HaRd3dWw",
            category: "Groceries",
            rate: 0.4,
-           minimum:2500
+           minimum:2500,
+           online: true
+       },
+       
+       {
+           card: "World MasterCard",
+           coy: "Maybank",
+           link:"https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR10QHSEk1HjEQdG1ZhKJNztSrPzz4iCBYqv-93Hxh-HaRd3dWw",
+           category: "Groceries",
+           rate: 0.5,
+           minimum:2500,
+           online: false
+       },
+       
+       {
+           card: "World MasterCard",
+           coy: "Maybank",
+           link:"https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR10QHSEk1HjEQdG1ZhKJNztSrPzz4iCBYqv-93Hxh-HaRd3dWw",
+           category: "All",
+           rate: 0.4,
+           minimum:2500,
+           online: false
        },
    
        {
@@ -49,7 +71,8 @@ $( document ).ready(function() {
            link:"http://t1.gstatic.com/images?q=tbn:ANd9GcTeyZ78NP7AQ2MjBEVAfOWqOsrFYiUNEJsE2m0KMihykjk7covD",
            category: "Groceries",
            rate: 2,
-           minimum:5000
+           minimum:5000,
+           online: false
        },
    
        {
@@ -58,7 +81,8 @@ $( document ).ready(function() {
            link:"http://3.bp.blogspot.com/-WrHgQkOXJKg/Udet6apq_TI/AAAAAAAAEAo/OiRxQpBZbSM/s1600/Citibank+Prestige+World+MasterCard+Elite.jpg",
            category: "Groceries",
            rate: 0.4,
-           minimum:1250
+           minimum:1250,
+           online: false
        },
    
        {
@@ -67,7 +91,8 @@ $( document ).ready(function() {
            link: "http://www.airfares.com.sg/promotions/credit-card-deals/anz/img/r-travelcard.jpg",
            category: "Dining",
            rate: 1,
-           minimum:2000
+           minimum:2000,
+           online: false
        }
    ]
    
@@ -79,11 +104,17 @@ $( document ).ready(function() {
       var amount;
       var category;
       var date;
+      var online=false;
       //Get amount
       if($("#amount").val()){
          amount = $("#amount").val();
       }else{
          amount = 0;
+      }
+      
+      //Get online
+      if($("input[name=mode]:checked").val()=="Online"){
+         online = true;
       }
       
       //Get category
@@ -99,8 +130,8 @@ $( document ).ready(function() {
       date= d.getFullYear()*10000 + d.getMonth()*100 + d.getDate();
       
       //Set selection info
-      var merchant = "Merchant: "+$("#merchant").val()
-      var mode = "Mode: "+$("input[name=mode]:checked").val()
+      var merchant = "Merchant: "+$("#merchant").val();
+      var mode = "Mode: "+$("input[name=mode]:checked").val();
       $("#amountResult").text("Amount: "+amount +" "+$("#currency").val());
       $("#merchantResult").text(merchant);
       $("#modeResult").text(mode);
@@ -110,7 +141,7 @@ $( document ).ready(function() {
       var cardResults = [];
       var cards = [];
       for(var i = 0; i < promos.length ; i++){
-         if((promos[i].category == category || promos[i].category == "All")&& promos[i].start <= date && promos[i].end >= date){
+         if((promos[i].category == category || promos[i].category == "All")&& promos[i].start <= date && promos[i].end >= date && promos[i].online==online){
             if($.inArray(promos[i].card, cards) == -1){
                cards.push(promos[i].card); 
                cardResults.push({
@@ -123,7 +154,7 @@ $( document ).ready(function() {
       }
       
       for(var i = 0; i < rates.length ; i++){
-         if(rates[i].category == category || rates[i].category == "All"){
+         if((rates[i].category == category || rates[i].category == "All") && rates[i].online==online){
             if($.inArray(rates[i].card, cards) == -1){
                cards.push(rates[i].card); 
                cardResults.push({
