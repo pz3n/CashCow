@@ -82,9 +82,9 @@ $( document ).ready(function() {
          append += "<div class='highlight'>" ;
          append += cardResults[i].name +": " + cardResults[i].points + "miles";
          append += "<br style='clear:both' />" ;
-         append += "<img src=" +cardResults[i].link+" width='125' height='45' style='margin-left:0; margin-right:10; margin-top:0; margin-bottom:0;border:0;padding:0;'/>"
+         append += "<img src=" +cardResults[i].link+" width='125' height='45' style='margin:0;border:0;padding:0;'/>"
          append += "<span class='col-xs-6' style='width:100px'></span>";
-         append += "<button class='btn btn-warning'>Use It!</button>";
+         append += "<button class='btn btn-warning' style='margin-left:10;>Use It!</button>";
          append += "</div>" ;
          $("#js-card-result").append(append);
       }
