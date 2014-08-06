@@ -79,12 +79,12 @@ $( document ).ready(function() {
       $("#js-card-result").empty();
       for(var i = 0; i < cardResults.length ; i++){
          var append=""; 
-         append += "<div class='highlight'>" ;
+         append += "<div class='highlight'  style='margin-top:10;'>" ;
          append += cardResults[i].name +": " + cardResults[i].points + "miles";
          append += "<br style='clear:both' />" ;
          append += "<img src=" +cardResults[i].link+" width='125' height='45' style='margin:0;border:0;padding:0;'/>"
          append += "<span class='col-xs-6' style='width:100px'></span>";
-         append += "<button class='btn btn-warning' style='margin-left:10;'>Use It!</button>";
+         append += "<button class='btn btn-warning'>Use It!</button>";
          append += "</div>" ;
          $("#js-card-result").append(append);
       }
