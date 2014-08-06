@@ -96,7 +96,7 @@ $( document ).ready(function() {
       //Get date in number chain yyyymmdd
       var d = new Date();
       date= d.getFullYear()*10000 + d.getMonth()*100 + d.getDate();
-      alert(date);
+      
       //Set selection info
       var merchant = "Merchant: "+$("#merchant").val()
       var mode = "Mode: "+$("input[name=mode]:checked").val()
@@ -109,7 +109,7 @@ $( document ).ready(function() {
       var cardResults = [];
       var cards = [];
       for(var i = 0; i < promos.length ; i++){
-         if(promos[i].category == category){
+         if(promos[i].category == category && promos[i].start <= date && promos[i].end >= date){
             if($.inArray(promos[i].card, cards) == -1){
                cards.push(promos[i].card); 
                cardResults.push({
