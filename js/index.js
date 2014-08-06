@@ -68,9 +68,8 @@ $( document ).ready(function() {
       $("#js-card-result").empty();
       for(var i = 0; i < cardResults.length ; i++){
          var append=""; 
-         append += "<br>";
          append += "<div class='highlight'>" ;
-         append += cardResults[i].name +": " + cardResults[i].points + "miles";
+         append += cardResults[i].name +": " + cardResults[i].points + " miles";
          append += "<br style='clear:both' />" ;
          append += "<img src=" +cardResults[i].link+" width='125' height='45' style='margin:0;border:0;padding:0;'/>"
          append += "<span class='col-xs-6' style='width:100px'></span>";
