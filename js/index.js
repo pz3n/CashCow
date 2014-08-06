@@ -66,13 +66,16 @@ $( document ).ready(function() {
       
       var cardResults = [];
       for(var card in cards){
+         alert(card.name);
          cardResults.push({
             name: card.name,
             link: card.link,
             points: Math.floor(amount/card.block)*card.rate
          });
       }
-      
+      cardResults.sort(function(a, b) { 
+          return a.points - b.points;
+      })
       
       alert(cardResults[0].name);
       
