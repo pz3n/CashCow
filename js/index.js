@@ -81,7 +81,7 @@ $( document ).ready(function() {
          var append=""; 
          append += "<div class='highlight'>" ;
          append += cardResults[i].name +": " + cardResults[i].points + "miles";
-         //append += "</br>" ;
+         append += "<br style='clear:both' />" ;
          append += "<img src=" +cardResults[i].link+" width='125' height='45'/><span class='col-xs-6' style='width:100px'></span>";
          append += "<button class='btn btn-warning'>Use It!</button>";
          append += "</div>" ;
