@@ -97,7 +97,7 @@ $( document ).ready(function() {
                cardResults.push({
                   card: rates[i].card,
                   link: rates[i].link,
-                  points: amount*rates[i].rate
+                  points: Math.floor(amount*rates[i].rate)
                });
             }
          }
