@@ -76,7 +76,7 @@ $( document ).ready(function() {
           return a.points - b.points;
       })
       
-      $("#js-card-result").remove();
+      $("#js-card-result").innerHTML = "";
       for(var i = 0; i < cardResults.length ; i++){
          var append= "<div class='highlight'><img src=" +cardResults[i].link+" width='125' height='45'/><span class='col-xs-6' style='width:100px'></span><button class='btn btn-warning'>Use It!</button></div>";
          $("#js-card-result").append(append);
