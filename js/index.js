@@ -65,6 +65,8 @@ $( document ).ready(function() {
       $("#card3").text(card3Result+" miles*");
       
       var cardResults = [];
+      alert(cards[0].name);
+       alert(cards[0].link);
       for(var card in cards){
          cardResults.push({
             name: card.name(),
