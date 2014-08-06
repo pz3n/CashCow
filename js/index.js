@@ -65,12 +65,11 @@ $( document ).ready(function() {
       $("#card3").text(card3Result+" miles*");
       
       var cardResults = [];
-      for(var card in cards){
-         alert(card.name);
+      for(var i = 0; i < cards.length ; i++){
          cardResults.push({
-            name: card.name,
-            link: card.link,
-            points: Math.floor(amount/card.block)*card.rate
+            name: cards[i].name,
+            link: cards[i].link,
+            points: Math.floor(amount/cards[i].block)*cards[i].rate
          });
       }
       cardResults.sort(function(a, b) { 
