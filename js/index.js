@@ -3,6 +3,23 @@ $( document ).ready(function() {
   
    $("#dateInput").datepicker();
    
+   var merchants = [
+      {
+           name: "NTUC FairPrice",
+           category: "Groceries"
+       },
+   
+       {
+           name: "Golden Peony",
+           category: "Dining"
+       },
+   
+       {
+           name: "Man Fu Yuan",
+           category: "Dining"
+       }
+   ]
+   
    var cards = [
       {
            name: "World MasterCard",
@@ -42,17 +59,30 @@ $( document ).ready(function() {
       $(".js-result").show();
       
       var amount;
+      var category;
+      //Set amount
       if($("#amount").val()){
          amount = $("#amount").val();
       }else{
          amount = 0;
       }
+      
+      //Set category
+      for(var i = 0; i < merchants.length ; i++){
+         if(merchants[i].name == $("#merchant").val()){
+            alert(merchants[i].category);
+         }
+      }
+      
+      //Set selection info
       var merchant = "Merchant: "+$("#merchant").val()
       var mode = "Mode: "+$("input[name=mode]:checked").val()
       $("#amountResult").text("Amount: "+amount +" "+$("#currency").val());
       $("#merchantResult").text(merchant);
       $("#modeResult").text(mode);
       
+      
+      //Populate and sort results array
       var cardResults = [];
       for(var i = 0; i < cards.length ; i++){
          cardResults.push({
@@ -61,10 +91,13 @@ $( document ).ready(function() {
             points: amount*cards[i].rate
          });
       }
+      
       cardResults.sort(function(a, b) { 
           return b.points - a.points;
       })
       
+      
+      //Load html display
       $("#js-card-result").empty();
       for(var i = 0; i < cardResults.length ; i++){
          var append=""; 
